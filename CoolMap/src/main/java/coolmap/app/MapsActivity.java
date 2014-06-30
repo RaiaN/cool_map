@@ -71,12 +71,13 @@ public class MapsActivity extends FragmentActivity {
             String noteText = cursor.getString(cursor.getColumnIndex(DatabaseHandler.NOTE_TEXT));
             String coordinates = cursor.getString(cursor.getColumnIndex(DatabaseHandler.MARKER_POSITION));
 
+            //parse coordinates
             String []cds = coordinates.split(";");
-
             Double latitude = Double.parseDouble(cds[0]);
             Double longitude = Double.parseDouble(cds[1]);
-            LatLng notePosition = new LatLng(latitude, longitude);
 
+            //here we have latitude and longitude
+            LatLng notePosition = new LatLng(latitude, longitude);
             Marker noteMarker = mMap.addMarker(new MarkerOptions().position(notePosition));
 
             Note note = new Note(noteText, noteMarker);
@@ -159,6 +160,7 @@ public class MapsActivity extends FragmentActivity {
 
                 final TextView input = new TextView(MapsActivity.this);
                 input.setText(notes.get(marker.getPosition()).getNote());
+                input.setTextSize(14);
                 builder.setView(input);
 
                 builder.setPositiveButton("Ок", null);
