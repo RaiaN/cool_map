@@ -1,5 +1,6 @@
 package coolmap.app;
 
+import android.app.Dialog;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
@@ -61,5 +62,13 @@ public class MapsActivity extends FragmentActivity {
      */
     private void setUpMap() {
         mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
+        mMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
+            @Override
+            public void onMapLongClick(LatLng latLng) {
+                Dialog d = new Dialog(MapsActivity.this);
+                d.setTitle("HELLO WORLD");
+                d.show();
+            }
+        });
     }
 }
