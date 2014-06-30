@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">CoolMap</string>
-    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_maps">Google Maps + notes</string>
     <string name="google_maps_key">AIzaSyBevNsxlay8MXO9RbXe6G20qQZGrdbJhuU</string>
 
 </resources>

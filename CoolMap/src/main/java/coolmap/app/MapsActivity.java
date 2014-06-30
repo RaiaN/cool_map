@@ -157,13 +157,14 @@ public class MapsActivity extends FragmentActivity {
 
                 builder.setTitle("Просмотр заметки");
                 builder.setCancelable(true);
+                builder.setPositiveButton("Ок", null);
 
                 final TextView input = new TextView(MapsActivity.this);
                 input.setText(notes.get(marker.getPosition()).getNote());
                 input.setTextSize(14);
                 builder.setView(input);
 
-                builder.setPositiveButton("Ок", null);
+
                 builder.show();
 
                 return false;
